@@ -4,6 +4,10 @@
   --text-sec-color: #6c7289;
   --primary-color: #3d8168;
   --hover-color: #1a4032;
+
+  --heading-font: "Georgia", sans-serif;
+  --para-font: "Montserrat", sans-serif;
+  --price-font: "Playfair Display", serif;
 }
 
 * {
@@ -16,7 +20,7 @@ body,
 html {
   height: 100%;
   background-color: var(--background);
-  font-family: "Fraunces", sans-serif;
+  font-family: var(--para-font);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +49,7 @@ html {
 }
 
 .product-content {
-  padding: 2rem;
+  padding: 1.8rem;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -62,15 +66,16 @@ html {
 }
 
 .product-content h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--text-main-color);
   margin-bottom: 1rem;
+  font-family: var(--heading-font);
 }
 
 .product-content p {
   color: var(--text-sec-color);
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
@@ -80,6 +85,7 @@ html {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  font-family: var(--price-font);
 }
 
 .product-price .discounted-price {
@@ -91,7 +97,6 @@ html {
 .ori-price {
   text-decoration: line-through;
   color: var(--text-sec-color);
-  font-size: 0.9rem;
 }
 
 button {
@@ -117,4 +122,20 @@ button:hover {
 button img {
   width: 16px;
   height: 16px;
+}
+
+@media (max-width: 640px) {
+  * {
+    box-sizing: unset;
+  }
+  .product-card {
+    display: grid;
+  }
+  .product-image img {
+    max-height: 250px;
+    max-width: 400px;
+  }
+  .product-price {
+    margin-bottom: 0;
+  }
 }
