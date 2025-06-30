@@ -1,5 +1,6 @@
 :root {
-  --background: #fff;
+  --background: hsl(30, 38%, 92%);
+  --card-background: hsl(0, 0%, 100%);
   --text-main-color: #1c232b;
   --text-sec-color: #6c7289;
   --primary-color: #3d8168;
@@ -7,7 +8,7 @@
 
   --heading-font: "Georgia", sans-serif;
   --para-font: "Montserrat", sans-serif;
-  --price-font: "Playfair Display", serif;
+  --price-font: "Fraunces", sans-serif;
 }
 
 * {
@@ -30,11 +31,12 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1em;
 }
 
 .product-card {
   display: flex;
-  background-color: var(--background);
+  background-color: var(--card-background);
   border-radius: 12px;
   overflow: hidden;
   max-width: 600px;
@@ -89,7 +91,7 @@ html {
 }
 
 .product-price .discounted-price {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
 }
@@ -125,9 +127,6 @@ button img {
 }
 
 @media (max-width: 640px) {
-  * {
-    box-sizing: unset;
-  }
   .product-card {
     display: grid;
   }
